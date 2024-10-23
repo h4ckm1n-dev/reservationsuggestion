@@ -28,30 +28,6 @@ Avant de commencer, assurez-vous d'avoir :
 
 ## Utilisation
 
-Préparer les Fichiers CSV
-
-Placez les fichiers reservations.csv, destinations.csv, et dates.csv dans le même répertoire que manage_reservations.py.
-
-reservations.csv
-
-ReservationNumber	Name	FlightDateID	DestinationID
-ABC123	John Doe	1	2
-DEF456	Jane Smith	2	2
-GHI789	Alice Brown	3	3
-destinations.csv
-
-DestinationID	Destination
-1	Bangkok
-2	Singapore
-3	Tokyo
-dates.csv
-
-FlightDateID	FlightDate
-1	2024-10-30
-2	2024-11-12
-3	2024-12-01
-Exécuter le Script
-
 Lancez le script via la ligne de commande :
    ```bash
    python3 manage_reservations.py
