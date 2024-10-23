@@ -1,0 +1,4 @@
+ReservationNumber,Name,FlightDateID,DestinationID
+ABC123,John Doe,1,2
+DEF456,Jane Smith,2,2
+GHI789,Alice Brown,3,3
