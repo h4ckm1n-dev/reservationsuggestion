@@ -1,7 +1,7 @@
 
 # Système de Gestion de Réservations
 
-Découvrez le **Système de Gestion de Réservations**, une application Python démontrant l'intégration efficace des **Modèles de Langage (LLMs)** dans des applications réelles. Grâce à **Ollama**, ce système offre des recommandations personnalisées et facilite la gestion interactive des réservations de vol.
+Découvrez le **Système de Gestion de Réservations**, un exemple d'intégration des **Modèles de Langage (LLMs)** dans des applications réelles. Grâce à **Ollama**, ce système offre des recommandations personnalisées et facilite la gestion interactive des réservations de vol.
 
 ## Fonctionnalités Principales
 
