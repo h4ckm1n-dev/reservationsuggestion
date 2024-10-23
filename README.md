@@ -1,43 +1,110 @@
 
-# Gestion de Réservations
+# Système de Gestion de Réservations
 
-Ce projet permet de simuler la gestion de réservations de vols à partir d'un fichier CSV. Il permet de rechercher, modifier et sauvegarder des réservations.
+Découvrez le **Système de Gestion de Réservations**, une application Python démontrant l'intégration efficace des **Modèles de Langage (LLMs)** dans des applications réelles. Grâce à **Ollama**, ce système offre des recommandations personnalisées et facilite la gestion interactive des réservations de vol.
 
-## Fonctionnalités
+## Fonctionnalités Principales
 
-- **Recherche de réservation** : Trouvez une réservation par son numéro.
-- **Modification de réservation** : Changez la date de vol ou la destination d'une réservation.
-- **Sauvegarde des modifications** : Mettez à jour et sauvegardez les nouvelles informations dans le fichier CSV.
+- **Recherche de Réservations :** Récupérez vos réservations en entrant votre numéro de réservation.
+- **Suggestions de Lieux à Visiter :** Recevez des recommandations sur les endroits à visiter à votre destination grâce à l'IA Ollama.
+- **Modification des Réservations :** Changez votre destination et/ou votre date de vol avec des confirmations avant sauvegarde.
 
-## Fichiers
+## Prérequis
 
-- `reservations.csv` : Contient les données de réservation.
-- `manage_reservations.py` : Script Python pour gérer les réservations.
+Avant de commencer, assurez-vous d'avoir :
 
-## Exemple d'utilisation
+- **Python 3.7 ou supérieur** installé.
+- **Packages Python :** `pandas`, `langchain_community`
+- **Ollama Language Model :** Installez et configurez Ollama. [Documentation Ollama](https://ollama.com/docs)
 
-1. **Charger les réservations** :
-   Le fichier `reservations.csv` contient les réservations à gérer.
+## Installation
 
-2. **Modifier une réservation** :
-   Le script modifie la réservation avec le numéro `ABC123` en changeant la date et la destination.
+1. **Cloner le Répertoire**
 
-3. **Sauvegarder les modifications** :
-   Les modifications sont ensuite sauvegardées dans le fichier CSV.
+   ```bash
+   git clone https://github.com/votreutilisateur/systeme-gestion-reservations.git
+   cd systeme-gestion-reservations
+   ```
 
-## Exécution
+## Utilisation
 
-Pour exécuter le script, suivez les étapes suivantes :
+Préparer les Fichiers CSV
 
-```bash
-# Cloner le dépôt
-git clone https://github.com/votre-utilisateur/GestionReservations.git
-cd GestionReservations
+Placez les fichiers reservations.csv, destinations.csv, et dates.csv dans le même répertoire que manage_reservations.py.
 
-# Exécuter le script
-python manage_reservations.py
+reservations.csv
+
+ReservationNumber	Name	FlightDateID	DestinationID
+ABC123	John Doe	1	2
+DEF456	Jane Smith	2	2
+GHI789	Alice Brown	3	3
+destinations.csv
+
+DestinationID	Destination
+1	Bangkok
+2	Singapore
+3	Tokyo
+dates.csv
+
+FlightDateID	FlightDate
+1	2024-10-30
+2	2024-11-12
+3	2024-12-01
+Exécuter le Script
+
+Lancez le script via la ligne de commande :
+   ```bash
+   python3 manage_reservations.py
+   ```
+
+## Suivre les Instructions
+
+Entrer le Numéro de Réservation : Fournissez votre numéro de réservation (ex. ABC123).
+Voir les Détails : Le système affichera les détails de votre réservation actuelle ainsi que des suggestions de lieux à visiter.
+Modifier la Destination : Sélectionnez une nouvelle destination parmi les options proposées.
+Confirmer la Destination : Après sélection, confirmez si vous souhaitez définir la nouvelle destination.
+Modifier la Date de Vol : Choisissez une nouvelle date de vol parmi les options disponibles.
+Confirmer et Sauvegarder : Confirmez les modifications pour les enregistrer dans le fichier reservations_updated.csv.
+
+## Exemple de Sortie
+
+Voici un exemple d'interaction avec le script démontrant ses capacités :
+```md
+$ python3 manage_reservations.py
+Veuillez entrer votre numéro de réservation : ABC123
+
+**Réservation trouvée :**
+ReservationNumber: ABC123
+Name: John Doe
+Destination: Singapore
+Region: Singapore
+FlightDate: 2024-10-30
+
+**Suggestions de lieux à visiter à Singapore :**
+
+Singapore est un archipel multiculturel situé dans le Sud-Est asiatique qui offre une expérience touristique unique en raison de sa diversité culturelle, gastronomique et architecturale. Voici quelques-uns des endroits les plus intéressants à visiter à Singapour :
+
+1.  **Gardens by the Bay** : Un parc botanique innovant situé dans le district de Marina East. Gardens by the Bay est célèbre pour ses jardins supérieurs, qui incluent la « Supertree Grove », une collection d'arbres géants avec des illuminations nocturnes et un espace vert appelé « Cloud Forest ».
+2.  **Marina Bay Sands SkyPark** : Un observatoire situé au sommet du complexe hôtelier Marina Bay Sands, offrant une vue imprenable sur la ville.
+3.  **Merlion Park** : Situé dans le district de Marina Bay, il est célèbre pour son statue géante du Merlion, qui symbolise Singapour et est un symbole emblématique de la ville.
+4.  **Sentosa Island** : Une île située à l'ouest de Singapour, Sentosa Island est connue pour ses plages, ses parcs d'amusement et son aquarium.
+5.  **Chinatown** : Le quartier chinois de Singapour, Chinatown est un endroit animé où vous pouvez trouver des magasins, des restaurants et des marchés locaux.
+6.  **Clarke Quay** : Un quartier très animé situé dans le district de Riverside, Clarke Quay offre une vue imprenable sur la rivière Singapour et propose diverses activités nocturnes telles que des bars, des clubs et des restaurants.
+7.  **National Gallery Singapore** : Un musée d'art contemporain qui présente l'histoire de l'art en Asie du Sud-Est.
+8.  **Sungei Buloh Wetland Reserve** : Situé dans le district de Yishun, il est célèbre pour ses zones humides et son importance pour la conservation des oiseaux migrateurs.
+9.  **Singapore Botanic Gardens** : Un jardin botanique qui abrite plus de 10 000 espèces de plantes différentes, y compris le célèbre Jardin National Orchid.
+10. **Little India** : Le quartier indien de Singapour, Little India est connu pour ses magasins, ses restaurants et son marché local animé.
+
+Voulez-vous définir 'Bangkok' comme nouvelle destination ? (oui/non) : oui
+
+Veuillez choisir une nouvelle date de vol parmi les options suivantes :
+1. 2024-10-30
+2. 2024-11-12
+3. 2024-12-01
+Entrez le numéro correspondant à votre choix de date de vol (1-3), ou tapez 'aide' pour plus d'informations : 1
+Voulez-vous sauvegarder ces modifications ? (oui/non) : oui
+
+Réservation ABC123 modifiée avec succès.
+
+Les réservations ont été sauvegardées dans 'reservations_updated.csv'.
 ```
-
-## Licence
-
-Ce projet est sous licence MIT.
